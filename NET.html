@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+  <link href="NET.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class="main-menu hidden">
+    <h1 id="title">Ethics Game: INST326</h1>
+    <button id="start-game">Start Game</button>
+  </div>
+  
+    <div class="quiz-container" id="quiz">
+      <div class="quiz-header">
+        <div class="question-container">
+          <h2 id="question"></h2>
+          <div class="image-container"> <!-- Move the image container below the question -->
+            <img src="" alt="Net" class="net-img" id="image"> <!-- Add an example image source for the image element -->
+          </div>
+        </div>
+        <ul>
+          <li>
+            <input type="radio" name="answer" id="a" class="answer">
+            <label for="a" id="a_text">Answer</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="b" class="answer">
+            <label for="b" id="b_text">Answer</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="c" class="answer">
+            <label for="c" id="c_text">Answer</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="d" class="answer">
+            <label for="d" id="d_text">Answer</label>
+          </li>
+        </ul>
+      </div>
+      <button id="submit-button">Submit</button>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    // Hide the title on the second page (quiz page)
+    document.getElementById("question").addEventListener("click", function() {
+      document.getElementById("title").style.display = "none";
+    });
+    var questionNumber = 1; // Start with the first question
+var image = document.getElementById("image");
+var questions = [
+  {
+    question: "Question 1",
+    imageSrc: "net1.jpeg" // Image source for question 1
+  },
+  {
+    question: "Question 2",
+    imageSrc: "net2.jpeg" // Image source for question 2
+  },
+  {
+    question: "Question 3",
+    imageSrc: "net4.jpeg" // Image source for question 1
+  },
+  {
+    question: "Question 4",
+    imageSrc: "net5.jpeg" // Image source for question 1
+  },
+  {
+    question: "Question 5",
+    imageSrc: "net6.jpeg" // Image source for question 1
+  },
+  {
+    question: "Question 6",
+    imageSrc: "net7.jpeg" // Image source for question 1
+  },
+  {
+    question: "Question 7",
+    imageSrc: "net8.jpeg" // Image source for question 1
+  },
+  // Add more questions with their respective image sources
+];
+
+// Function to show the current question and update the image source
+function showQuestion() {
+  var question = questions[questionNumber - 1];
+  document.getElementById("question").textContent = question.question;
+  image.src = question.imageSrc }
+
+// Function to handle submission of answers
+function submitAnswer() {
+  // Logic to check if the selected answer is correct and perform necessary actions
+  // ...
+
+  // Increment the question number to move to the next question
+  questionNumber++;
+
+  // Check if all questions have been answered, and perform necessary actions
+  if (questionNumber > questions.length) {
+    // All questions have been answered, perform necessary actions
+    // ...
+  } else {
+    // Show the next question
+    showQuestion();
+  }
+}
+
+// Call the function to show the first question and image when the page loads
+window.onload = function() {
+  showQuestion();
+};
+
+// Attach event listener to the "Submit" button
+document.getElementById("submit-button").addEventListener("click", submitAnswer);
+    // Update the image source based on the current question
+
+  </script>
+  <script src="NET.js" type="text/javascript"></script> <!-- Move the script tag with the JavaScript code that updates the image source to the bottom -->
+</body>
+</html>

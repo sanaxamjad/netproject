@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+
+
+* {
+  box-sizing: border-box;
+}
+/* CSS for the quiz-scroll-container */
+
+
+.question {
+  margin-bottom: 20px; /* Add margin bottom as desired */
+}
+
+/* Add CSS styles for the image-container class */
+.image-container img {
+  width: auto; /* Set width to desired size */
+  height: auto; /* Set height to auto to maintain aspect ratio */
+  max-width: 100%; /* Set max-width to 100% to prevent image from overflowing */
+  margin: 0 auto; /* Center the image horizontally */
+}
+body {
+  background-color: #c7f3d9;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-menu h1 {
+  font-size: 36px;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.main-menu button {
+  margin-top: 16px;
+  padding: 30px 60px;
+  font-size: 20px;
+  background-image: linear-gradient(to right, #03c8b8, #029b88);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-image 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-menu button:hover {
+  background-image: linear-gradient(to right, #059b8e, #046d5c);
+}
+
+.main-menu button.submit-btn {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 24px;
+  width: 100px;
+  height: 100px;
+}
+.main-menu button.submit-btn:hover {
+  background-image: linear-gradient(to right, #059b8e, #046d5c);
+}
+
+#submit-button {
+  /* CSS styles for the Submit button */
+  background-color: #1e7f5e; /* Set background color to blue */
+  color: #fff; /* Set text color to white */
+  padding: 10px 20px; /* Add padding to the button */
+  font-size: 18px; /* Set font size to 18 pixels */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Add cursor pointer on hover */
+  
+  /* Additional styles for rounded shape and center alignment */
+  border-radius: 25px; /* Set border radius to make it more round */
+  display: block; /* Set display to block to center align */
+  margin: 0 auto; /* Set margin to auto for center alignment */
+  text-align: center; /* Set text alignment to center */
+  width: fit-content; /* Set width to fit the content */
+}
+
+
+
+#submit-button:hover {
+  /* CSS styles for the Submit button on hover */
+  background-color: #1e7f5e; /* Set darker background color on hover */
+}
+/* Added styles for quiz container */
+.quiz-container {
+  display: none;
+}
+
+.quiz-header {
+  padding: 4rem;
+}
+
+.quiz-header h2 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #666;
+}
+
+ul li label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding-left: 36px;
+}
+
+ul li input[type="radio"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+ul li label:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border: 2px solid #1e7f5e;
+  border-radius: 50%;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease-in-out;
+}
+
+ul li input[type="radio"]:checked + label:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border: 2px solid #1e7f5e;
+  border-radius: 50%;
+  background-color: #44b927;
+  transition: background-color 0.3s ease-in-out;
+}
